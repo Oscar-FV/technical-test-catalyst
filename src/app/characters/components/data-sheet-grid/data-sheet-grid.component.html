@@ -1,0 +1,113 @@
+<div
+  class="grid h-full auto-rows-[150px] grid-cols-3 gap-5 sm:grid-rows-5 md:grid-rows-4"
+>
+  <div
+    class="col-span-3 row-span-2 h-full w-full overflow-hidden rounded-3xl border-b border-base-700 shadow-lg sm:col-span-1"
+  >
+    <img
+      src="{{ dataSheet.character.image }}"
+      class="aspect-auto h-full w-full"
+      alt="{{ dataSheet.character.name }}"
+    />
+  </div>
+
+  <div
+    class="col-span-3 row-span-2 h-full w-full overflow-hidden rounded-3xl border-b border-base-700 bg-gradient-to-tl from-primary-600 to-secondary-200 shadow-lg sm:col-span-2 md:row-span-3"
+  >
+    <div
+      class="flex h-full w-full flex-col items-center gap-y-5 px-10 py-10 font-bold"
+    >
+      <h1
+        class="font-pixelify text-[3cqb] capitalize leading-none text-primary-800 md:text-[7cqb] xl:text-[10cqb]"
+      >
+        {{ dataSheet.character.name }}
+      </h1>
+      <span class="badge badge-lg uppercase">{{
+        dataSheet.character.status
+      }}</span>
+      <div class="flex h-full flex-col justify-center gap-10">
+        <h2
+          class="font-pixelify text-[3cqb] capitalize leading-none text-primary-800 md:text-5xl"
+        >
+          specie:
+          <span>{{ dataSheet.character.species }}</span>
+        </h2>
+
+        <h2
+          class="font-pixelify text-[3cqb] capitalize leading-none text-primary-800 md:text-5xl"
+        >
+          gender:
+          <span>{{ dataSheet.character.gender }}</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="relative col-span-3 h-full w-full overflow-hidden rounded-3xl border-b border-base-700 bg-black shadow-lg sm:row-start-3 md:col-span-1"
+  >
+    <div
+      class="absolute z-10 flex h-full w-full flex-col justify-center px-4 py-4 capitalize text-accent-500"
+    >
+      <h2 class="font-pixelify md:text-2xl">
+        origin:
+        <span class="">{{ dataSheet.originLocation?.name || "unknow" }}</span>
+      </h2>
+      <h2 class="font-pixelify md:text-2xl">
+        type:
+        <span class="">{{ dataSheet.originLocation?.type || "unknow" }}</span>
+      </h2>
+      <h2 class="font-pixelify md:text-2xl">
+        {{ dataSheet.originLocation?.dimension || "unknow" }}
+      </h2>
+    </div>
+    <img
+      src="../../../../assets/imgs/portal.webp"
+      class="h-full w-full opacity-25"
+    />
+  </div>
+
+  <div
+    class="relative col-span-3 h-full w-full overflow-hidden rounded-3xl border-b border-base-700 bg-black shadow-lg sm:row-start-5 md:col-span-2 md:col-start-2 md:row-start-4"
+  >
+    <div
+      class="absolute z-10 flex h-full w-full flex-col justify-center px-4 py-4 capitalize text-secondary-500"
+    >
+      <h2 class="font-pixelify font-bold md:text-3xl">first apperance</h2>
+      <h2 class="font-pixelify md:text-2xl">
+        episode:
+        <span class=""
+          >{{ dataSheet.firstApperance.episode }} -
+          {{ dataSheet.firstApperance.name }}</span
+        >
+      </h2>
+      <h2 class="font-pixelify md:text-2xl">
+        date: <span class="">{{ dataSheet.firstApperance.air_date }}</span>
+      </h2>
+    </div>
+    <img
+      src="../../../../assets/imgs/bg-1.png"
+      class="h-full w-full object-cover opacity-35"
+    />
+  </div>
+
+  <div
+    class="col-span-3 row-start-6 h-full w-full overflow-hidden rounded-3xl border-b border-base-700 bg-gradient-to-b from-secondary-300 to-accent-700 shadow-lg sm:row-start-4 md:col-span-1 md:col-start-1"
+  >
+    <div
+      class="z-10 flex h-full w-full flex-col justify-center px-4 py-4 capitalize text-primary-800"
+    >
+      <h2 class="font-pixelify md:text-2xl">
+        last seen:
+        <span class="">{{ dataSheet.currentLocation?.name || "unknow" }}</span>
+      </h2>
+      <h2 class="font-pixelify md:text-2xl">
+        type:
+        <span class="">{{ dataSheet.currentLocation?.type || "unknow" }}</span>
+      </h2>
+      <h2 class="font-pixelify md:text-2xl">
+        {{ dataSheet.currentLocation?.dimension || "unknow" }}
+      </h2>
+    </div>
+  </div>
+</div>

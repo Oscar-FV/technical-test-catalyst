@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "pixelify";
+  src: url("./assets/PixelifySans.ttf");
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("./assets/Poppins.ttf");
+}

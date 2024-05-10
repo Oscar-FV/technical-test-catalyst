@@ -1,0 +1,19 @@
+<characters-search
+  class="flex w-full flex-col justify-center bg-base-500 px-8 py-10 font-poppins lg:px-10"
+  (onValueSubmit)="searchCharactersByName($event)"
+></characters-search>
+
+<div
+  class="flex w-full flex-wrap justify-center gap-8 bg-primary-100 px-8 py-10 font-poppins lg:px-10"
+>
+  <characters-list-item
+    *ngFor="let character of characters"
+    (onCharacterClick)="onCharacterClick($event)"
+    [character]="character"
+  ></characters-list-item>
+</div>
+<characters-modal
+  [selectedCharacter]="selectedCharacter"
+  [isModalOpen]="isModalOpen"
+  (onCloseModal)="onCloseModal($event)"
+></characters-modal>

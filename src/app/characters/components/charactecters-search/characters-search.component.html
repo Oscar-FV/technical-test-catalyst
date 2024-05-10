@@ -1,0 +1,18 @@
+<h1
+  class="text-center font-pixelify text-[4cqb] font-bold uppercase text-primary-500 lg:text-[9cqb]"
+>
+  search rick and morty characters
+</h1>
+<div class="join">
+  <input
+    type="text"
+    name="search"
+    class="input join-item input-bordered w-full"
+    [placeholder]="placeholder"
+    [formControl]="search"
+    (keyup.enter)="emitValue()"
+  />
+  <button class="btn join-item" type="submit" (click)="emitValue()">
+    Search
+  </button>
+</div>

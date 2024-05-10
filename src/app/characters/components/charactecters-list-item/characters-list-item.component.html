@@ -1,0 +1,38 @@
+<div
+  class="card h-[31rem] w-[15rem] cursor-pointer bg-base-500 shadow-xl md:w-[25rem]"
+  (click)="emitCharacter(character)"
+>
+  <figure>
+    <img
+      src="{{ character.image }}"
+      alt="{{ character.name }}"
+      class="w-full"
+    />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      {{ character.name }}
+    </h2>
+    <div
+      class="badge capitalize"
+      [ngClass]="{
+        'badge-secondary': character.status === 'Alive',
+        'bg-red-300': character.status === 'Dead',
+        'bg-gray-300': character.status === 'unknow'
+      }"
+    >
+      {{ character.status }}
+    </div>
+    <div class="grow">
+      <p><strong>Species:</strong> {{ character.species }}</p>
+      <p><strong>Gender:</strong> {{ character.gender }}</p>
+    </div>
+    <div class="card-actions justify-end">
+      <div
+        class="badge badge-lg h-auto border border-accent-500 bg-transparent text-center text-accent-500"
+      >
+        {{ character.origin.name }}
+      </div>
+    </div>
+  </div>
+</div>
